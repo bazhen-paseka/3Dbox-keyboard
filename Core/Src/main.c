@@ -26,6 +26,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+	#include "VRbox-keyboards-sm.h"
+	#include "keyb_4x4_pcf8574_i2c_sm.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,12 +95,23 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
+	PCF8574_Struct  hpcf0 ;
+	PCF8574_Struct  hpcf1 ;
+	PCF8574_struct_init( &hpcf0 , VR_KeyBoard_0 , &hi2c1 , &huart3 , I2C_ADR_PCF_0 ) ;
+	PCF8574_struct_init( &hpcf1 , VR_KeyBoard_1 , &hi2c1 , &huart3 , I2C_ADR_PCF_1 ) ;
+	PCF8574_IRQ_enable( &hpcf0 ) ;
+	PCF8574_IRQ_enable( &hpcf1 ) ;
+
+	Debug_Struct 	hdebug ;
+	VRbox_Debug_Init( &hdebug , &huart1 , &hi2c1 ) ;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	VRbox_Main ( &hdebug , &hpcf0 , &hpcf1 ) ;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
