@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 
 	#include "keyb_4x4_pcf8574_i2c_sm.h"
+	#include "VRbox-keyboards-sm.h"
 
 /* USER CODE END Includes */
 
@@ -209,7 +210,7 @@ void EXTI3_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI3_IRQn 0 */
 
-	PCF8574_set_IRQ_flag(0);
+	PCF8574_set_IRQ_flag( VR_KeyBoard_0 ) ;
 
   /* USER CODE END EXTI3_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
@@ -225,7 +226,7 @@ void EXTI4_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI4_IRQn 0 */
 
-	PCF8574_set_IRQ_flag(1);
+	PCF8574_set_IRQ_flag( VR_KeyBoard_1 ) ;
 
   /* USER CODE END EXTI4_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
