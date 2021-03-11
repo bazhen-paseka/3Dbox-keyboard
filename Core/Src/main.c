@@ -97,13 +97,13 @@ int main(void)
 
 	PCF8574_Struct  	hpcf[ VR_KeyBoard_QNT ] ;
 
-	PCF8574_struct_init( &hpcf[ VR_KeyBoard_0 ] , &hi2c1 , &huart3 , VR_KeyBoard_0 ,  I2C_ADR_PCF_0 ) ;
-	PCF8574_struct_init( &hpcf[ VR_KeyBoard_1 ] , &hi2c1 , &huart3 , VR_KeyBoard_1 ,  I2C_ADR_PCF_1 ) ;
+	PCF8574_struct_init( &hpcf[ VR_KeyBoard_0 ] , &hi2c1 ,  VR_KeyBoard_0 ,  I2C_ADR_PCF_0 ) ;
+	PCF8574_struct_init( &hpcf[ VR_KeyBoard_1 ] , &hi2c1 ,  VR_KeyBoard_1 ,  I2C_ADR_PCF_1 ) ;
 	PCF8574_IRQ_enable ( &hpcf[ VR_KeyBoard_0 ] ) ;
 	PCF8574_IRQ_enable ( &hpcf[ VR_KeyBoard_1 ] ) ;
 
-	Debug_Struct 	hdebug ;
-	VRbox_Debug_Init( &hdebug , &huart1 , &hi2c1 ) ;
+	VRbox_Struct 	hvrbox ;
+	VRbox_Init( &hvrbox , &huart1 , &huart3 , &hi2c1 ) ;
 
   /* USER CODE END 2 */
 
@@ -111,7 +111,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	VRbox_Main ( &hdebug , &hpcf[ VR_KeyBoard_0 ] , &hpcf[ VR_KeyBoard_1 ] ) ;
+	VRbox_Main ( &hvrbox , &hpcf[ VR_KeyBoard_0 ] , &hpcf[ VR_KeyBoard_1 ] ) ;
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
