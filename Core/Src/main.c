@@ -111,7 +111,41 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	VRbox_Main ( &hvrbox , &hpcf[ VR_KeyBoard_0 ] , &hpcf[ VR_KeyBoard_1 ] ) ;
+//	VRbox_Main ( &hvrbox , &hpcf[ VR_KeyBoard_0 ] , &hpcf[ VR_KeyBoard_1 ] ) ;
+
+//	//---------------------------------------------------------------
+//	if ( PCF8574_get_IRQ_flag( &hpcf[0] ) == SET ) 			{
+//		hpcf[0].key_current = PCF8574_scan_keyboard( &hpcf[0] ) 	;
+//		if ( hpcf[0].key_previous != hpcf[0].key_current )		{
+//			VRbox_Send( &hvrbox , &hpcf[0] )				;
+//			hpcf[0].key_previous = hpcf[0].key_current	;
+//		}
+//		PCF8574_update_IRQ_flag( &hpcf[0] , RESET )		;
+//		PCF8574_IRQ_enable( &hpcf[0] )						;
+//	}
+//	//---------------------------------------------------------------
+//	if ( PCF8574_get_IRQ_flag( &hpcf[1] ) == SET ) 			{
+//		hpcf[1].key_current = PCF8574_scan_keyboard( &hpcf[1] )	;
+//		if ( hpcf[1].key_previous != hpcf[1].key_current )		{
+//			VRbox_Send( &hvrbox , &hpcf[1] )				;
+//			hpcf[1].key_previous = hpcf[1].key_current	;
+//		}
+//		PCF8574_update_IRQ_flag( &hpcf[1] , SET )			;
+//		PCF8574_IRQ_enable( &hpcf[1] )						;
+//	}
+//	//---------------------------------------------------------------
+
+	for ( VR_Keyboard_enum keyb = 0; keyb < VR_KeyBoard_QNT; keyb++ ) {
+		if ( PCF8574_get_IRQ_flag( &hpcf[keyb] ) == SET ) {
+		hpcf[keyb].key_current = PCF8574_scan_keyboard( &hpcf[keyb] ) ;
+		if ( hpcf[keyb].key_previous != hpcf[keyb].key_current ) {
+			VRbox_Send( &hvrbox , &hpcf[keyb] )					;
+			hpcf[keyb].key_previous = hpcf[keyb].key_current	;
+		}
+		PCF8574_update_IRQ_flag( &hpcf[keyb] , RESET )	;
+		PCF8574_IRQ_enable( &hpcf[keyb] )				;
+		}
+	}
 
     /* USER CODE END WHILE */
 
