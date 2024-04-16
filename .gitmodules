@@ -1,9 +1,9 @@
 [submodule "Drivers/i2c_TechMaker_sm"]
 	path = Drivers/i2c_TechMaker_sm
 	url = https://github.com/bazhen-paseka/i2c_TechMaker_sm.git
-[submodule "Drivers/keyb_4x4_PCF8574_i2c_sm"]
-	path = Drivers/keyb_4x4_PCF8574_i2c_sm
-	url = https://github.com/bazhen-paseka/keyb_4x4_PCF8574_i2c_sm.git
 [submodule "Drivers/VRbox-keyboards-sm"]
 	path = Drivers/VRbox-keyboards-sm
 	url = https://github.com/bazhen-paseka/VRbox-keyboards-sm.git
+[submodule "Drivers/kb_4x4xn_pcf8574_sm"]
+	path = Drivers/kb_4x4xn_pcf8574_sm
+	url = git@gitlab.com:drivers8682116/kb_4x4xn_pcf8574_sm.git
