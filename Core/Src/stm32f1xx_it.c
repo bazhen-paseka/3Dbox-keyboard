@@ -213,7 +213,7 @@ void EXTI3_IRQHandler(void)
 	PCF8574_set_IRQ_flag( VR_KeyBoard_0 ) ;
 
   /* USER CODE END EXTI3_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+  HAL_GPIO_EXTI_IRQHandler(PCF_IRQ_1_Pin);
   /* USER CODE BEGIN EXTI3_IRQn 1 */
 
   /* USER CODE END EXTI3_IRQn 1 */
@@ -229,7 +229,7 @@ void EXTI4_IRQHandler(void)
 	PCF8574_set_IRQ_flag( VR_KeyBoard_1 ) ;
 
   /* USER CODE END EXTI4_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
+  HAL_GPIO_EXTI_IRQHandler(PCF_IRQ_2_Pin);
   /* USER CODE BEGIN EXTI4_IRQn 1 */
 
   /* USER CODE END EXTI4_IRQn 1 */
@@ -238,4 +238,3 @@ void EXTI4_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

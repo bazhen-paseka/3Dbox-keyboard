@@ -66,6 +66,7 @@ void Error_Handler(void);
 #define PCF_IRQ_2_Pin GPIO_PIN_4
 #define PCF_IRQ_2_GPIO_Port GPIOB
 #define PCF_IRQ_2_EXTI_IRQn EXTI4_IRQn
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -75,5 +76,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
