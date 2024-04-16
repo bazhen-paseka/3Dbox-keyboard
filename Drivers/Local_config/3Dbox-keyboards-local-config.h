@@ -3,11 +3,11 @@
 #define BOX_3D_KEYBOARDS_LOCAL_CONFIG_H_INCLUDED
 //******************************************************************************************
 
-	#define SOFT_VERSION	310
+	#define SOFT_VERSION	400
 
-	#define VERSION_DAY		11
-	#define VERSION_MONTH	3
-	#define VERSION_YEAR	2021
+	#define VERSION_DAY		16
+	#define VERSION_MONTH	4
+	#define VERSION_YEAR	2024
 
 //******************************************************************************************
 #endif	//	BOX_3D_KEYBOARDS_LOCAL_CONFIG_H_INCLUDED
