@@ -24,7 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-	#include "keyb_4x4_pcf8574_i2c_sm.h"
+	#include "kb_4x4xN_pcf8574_sm.h"
 	#include "VRbox-keyboards-sm.h"
 
 /* USER CODE END Includes */

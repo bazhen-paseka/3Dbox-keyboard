@@ -4,3 +4,6 @@
 [submodule "Drivers/VRbox-keyboards-sm"]
 	path = Drivers/VRbox-keyboards-sm
 	url = https://github.com/bazhen-paseka/VRbox-keyboards-sm.git
+[submodule "Drivers/kb_4x4xn_pcf8574_sm"]
+	path = Drivers/kb_4x4xn_pcf8574_sm
+	url = git@gitlab.com:drivers8682116/kb_4x4xn_pcf8574_sm.git
